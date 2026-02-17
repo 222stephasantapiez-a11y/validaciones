@@ -1,5 +1,7 @@
 let usuario = document.getElementById("usuario");
 let mensaje = document.getElementById("mensaje");
+let password = document.getElementById("password");
+
 
 usuario.addEventListener("input", function () {
 
@@ -23,3 +25,23 @@ usuario.addEventListener("input", function () {
 
     this.value = valor.replace(/[^a-zA-Z]/g, '');
 });
+
+let mensajePassword = document.getElementById("mensajePassword");
+
+password.addEventListener("input", function () {
+
+    let valor = this.value;
+
+    if (valor.length < 10) {
+        this.style.border = "2px solid red";
+        mensajePassword.textContent = "La contraseña debe tener mínimo 10 caracteres";
+        mensajePassword.style.color = "red";
+    } 
+    else {
+        this.style.border = "2px solid green";
+        mensajePassword.textContent = "Contraseña válida";
+        mensajePassword.style.color = "green";
+    }
+
+});
+
